@@ -1,0 +1,161 @@
+/* Estilo general de la página */
+body {
+  margin: 0;
+  padding: 30px 16px;
+  font-family: Arial, sans-serif;
+  color: #243247;
+  background-color: #f2f5f9;
+
+  /* La capa clara suaviza la foto sin ocultarla */
+  background-image:
+    linear-gradient(
+      rgba(244, 247, 250, 0.72),
+      rgba(244, 247, 250, 0.72)
+    ),
+    url("fondo.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Centra el título, la introducción y el contenido */
+h1,
+body > p,
+main {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  color: #173b6c;
+}
+
+/* Paneles blancos para que el contenido se lea sobre la foto */
+section {
+  max-width: 950px;
+  margin: 20px auto;
+  padding: 20px;
+  overflow-x: auto;
+  background-color: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(210, 220, 232, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 5px 18px rgba(35, 53, 78, 0.12);
+}
+
+h2 {
+  color: #173b6c;
+}
+
+/* Formato de la tabla */
+table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+th,
+td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #d8e0ea;
+  text-align: left;
+}
+
+th {
+  color: #173b6c;
+  background-color: #edf3fa;
+}
+
+/* Campos para cantidades, totales y opciones */
+input,
+select {
+  padding: 9px;
+  border: 1px solid #aebccd;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 1rem;
+}
+
+table input {
+  width: 75px;
+  max-width: 100%;
+}
+#enunciado {
+  display: block;
+  width: 100%;
+  min-height: 140px;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #aebccd;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+/* Botones */
+button {
+  margin: 8px 8px 8px 0;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  color: white;
+  background-color: #2167b2;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #174c86;
+}
+
+/* Espacios para mostrar ecuaciones y procedimientos */
+pre {
+  padding: 14px;
+  overflow-x: auto;
+  background-color: #f2f5f9;
+  border-radius: 6px;
+  white-space: pre-wrap;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+    background-attachment: scroll;
+  }
+
+  section {
+    padding: 14px;
+  }
+}
+#cambiarUsuario {
+  display: block;
+  margin: 0 0 16px auto;
+}
+
+.mensaje-usuario {
+  color: #173b6c;
+  font-weight: bold;
+  text-align: center;
+  margin: 12px auto;
+  padding: 12px 18px;
+  width: fit-content;
+  border-radius: 8px;
+  background-color: rgba(237, 243, 250, 0.95);
+  animation: pulsoPerfil 1.8s ease-in-out infinite;
+}
+
+@keyframes pulsoPerfil {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+}

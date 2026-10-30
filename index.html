@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de precios de una tienda</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <script src="calculos.js" defer></script>
+</head>
+
+<body>
+    <section id="pantallaAcceso">
+        <h1>Sistema de precios de una tienda</h1>
+        <h2>¿Cómo deseas ingresar?</h2>
+
+        <button id="entrarAlumno" type="button">Entrar como alumno</button>
+        <button id="entrarProfesor" type="button">Entrar como profesor</button>
+        <div id="accesoProfesor" hidden>
+            <label for="claveProfesor">Clave de profesor:</label>
+            <input id="claveProfesor" type="password">
+
+            <button id="validarClaveProfesor" type="button">Ingresar</button>
+        </div>
+    </section>
+
+    <div id="contenidoApp" hidden>
+        <p id="mensajeUsuario" class="mensaje-usuario"></p>
+        <button id="cambiarUsuario" type="button">Cambiar de usuario</button>
+        <h1>Sistema de precios de una tienda</h1>
+
+        <p>
+            Esta aplicación calculará el precio de varios productos
+            usando los datos de tres compras.
+        </p>
+
+        <main id="aplicacion">
+            <section>
+                <h2>Problema</h2>
+                <textarea id="enunciado" rows="4">
+Una papelería vende cuadernos, lapiceros y borradores. A partir de tres compras, queremos encontrar el precio unitario de cada producto.
+    </textarea>
+            </section>
+            <section>
+                <h2>Datos de las compras</h2>
+
+                <p>
+                    Ingresa cuántos productos se compraron y el total pagado
+                    en cada compra.
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Compra</th>
+                            <th>Cuadernos (x)</th>
+                            <th>Lapiceros (y)</th>
+                            <th>Borradores (z)</th>
+                            <th>Total pagado (Q)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Compra 1</td>
+                            <td><input id="cantidad1Cuaderno" type="number" min="0" step="1" value="2"></td>
+                            <td><input id="cantidad1Lapicero" type="number" min="0" step="1" value="1"></td>
+                            <td><input id="cantidad1Borrador" type="number" min="0" step="1" value="1"></td>
+                            <td><input id="total1" type="number" min="0" step="0.01" value="20"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Compra 2</td>
+                            <td><input id="cantidad2Cuaderno" type="number" min="0" step="1" value="1"></td>
+                            <td><input id="cantidad2Lapicero" type="number" min="0" step="1" value="2"></td>
+                            <td><input id="cantidad2Borrador" type="number" min="0" step="1" value="1"></td>
+                            <td><input id="total2" type="number" min="0" step="0.01" value="16"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Compra 3</td>
+                            <td><input id="cantidad3Cuaderno" type="number" min="0" step="1" value="1"></td>
+                            <td><input id="cantidad3Lapicero" type="number" min="0" step="1" value="1"></td>
+                            <td><input id="cantidad3Borrador" type="number" min="0" step="1" value="2"></td>
+                            <td><input id="total3" type="number" min="0" step="0.01" value="16"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <h2>Elige cómo resolver el sistema</h2>
+
+                <label for="metodoDeterminante">
+                    Para Cramer, calcular determinantes con:
+                </label>
+
+                <select id="metodoDeterminante">
+                    <option value="sarrus">Regla de Sarrus</option>
+                    <option value="cofactores">Expansión por cofactores</option>
+                </select>
+
+                <p>
+                    <button id="resolverCramer" type="button">
+                        Resolver con Cramer
+                    </button>
+
+                    <button id="resolverGauss" type="button">
+                        Resolver con Gauss
+                    </button>
+                </p>
+            </section>
+
+            <section>
+                <h2>Sistema de ecuaciones</h2>
+                <pre id="sistema">Aquí aparecerán las ecuaciones.</pre>
+            </section>
+
+            <section>
+                <h2>Resultado</h2>
+                <p id="resultado">Aquí aparecerán los precios calculados.</p>
+            </section>
+
+            <section id="seccionProcedimiento">
+                <h2>Procedimiento</h2>
+                <pre id="procedimiento">Aquí se mostrarán los pasos.</pre>
+            </section>
+
+            <section>
+                <h2>Comprobación</h2>
+                <pre id="comprobacion">Aquí comprobaremos los precios con las compras.</pre>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
